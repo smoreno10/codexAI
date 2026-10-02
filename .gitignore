@@ -1,0 +1,21 @@
+# Ignorar todo el contenido de .codex
+*
+
+# Excepto este archivo
+!.gitignore
+
+# AGENTS global
+!AGENTS.md
+
+# Carpeta de skills
+!skills/
+
+# Ignorar inicialmente todas las skills
+skills/*
+
+# Incluir solamente nuestras skills
+!skills/gestor-del-cambio/
+!skills/gestor-del-cambio/**
+
+!skills/implementador-del-cambio/
+!skills/implementador-del-cambio/**
