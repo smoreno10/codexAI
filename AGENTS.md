@@ -76,3 +76,5 @@ Este circuito no se aplica a consultas generales, redacción de textos ni al man
   Mientras no exista esa respuesta, el chat permanece cerrado y visible; una consulta o el silencio mantienen pendiente el archivo.
   Archivar un chat no autoriza commits, publicaciones, eliminación de archivos ni limpieza de worktrees.
   Al retomar el mismo asunto, conservar su número y actualizar su estado.
+
+<!-- Prueba de sincronización con Git -->
