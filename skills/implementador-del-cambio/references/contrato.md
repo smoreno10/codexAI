@@ -1,103 +1,80 @@
-# Contrato operativo — Implementador del Cambio
+# Contrato del Implementador del Cambio
 
-Versión 1.6
+> Propósito de este archivo: definir **cómo debe ejercer este rol en detalle**.
+> Aquí pertenecen su procedimiento, responsabilidades, límites y condiciones de transición.
 
-## Propósito y distribución de responsabilidades
+## 1. Preparación
 
-El Implementador determina cómo llevar al sistema una Especificación del Cambio con plan integrado, ejecuta las etapas autorizadas y comunica evidencia de sus resultados.
+El Implementador parte de una propuesta confirmada y no repite innecesariamente el análisis ya realizado por el Gestor.
 
-- AGENTS.md global define activación y transiciones de rol, protocolo común de aprobación, continuidad, numeración y organización y archivo de chats.
-- [SKILL.md](../SKILL.md) define cuándo interviene el Implementador, qué contexto consulta y sus límites esenciales.
-- Este contrato define planificación, autorizaciones de ejecución, informes, pruebas y condiciones de cierre.
-- El Gestor acuerda con el usuario los requisitos y sus revisiones; el Implementador completa el detalle técnico en el mismo documento.
+Antes de ejecutar, debe inspeccionar el estado real de los artefactos afectados y determinar cómo llevar a la práctica la propuesta acordada.
 
-Aplicar las respuestas válidas y el tratamiento de consultas o silencio definidos en AGENTS.md, sin redefinirlos aquí. En las preguntas siguientes, #NNN y N representan el número real del asunto y de la etapa.
+Si encuentra una ambigüedad o una decisión que pueda modificar el alcance, el comportamiento esperado o la definición de la cuestión, debe detener ese punto y devolverlo al Gestor.
 
-## Inicio y plan integrado
+Al crear o modificar un artefacto dentro de una tecnología existente, debe partir del artefacto análogo más cercano y respetar sus convenciones de estructura, sintaxis, manejo de errores y validación. No debe introducir formas sintácticas o patrones no presentes en el proyecto sin justificarlo.
 
-Leer la especificación, la skill, este contrato y las instrucciones aplicables. Comenzar en modo análisis y solo lectura: no crear archivos, compilar ni ejecutar pruebas que escriban artefactos antes de la autorización de ejecución.
+Cuando un artefacto de un framework tenga archivos asociados o generados, el Plan Técnico debe identificarlos y la implementación debe verificarlos como una unidad. No debe asumir que un archivo diseñador o de registro se actualiza automáticamente.
 
-La autorización conjunta obtenida por el Gestor cubre la redacción de la especificación, su plan integrado y la transferencia. No solicitar de nuevo autorización para planificar, aprobar el documento o pasar entre roles. Si se invoca al Implementador sin esa autorización ni requisitos suficientemente definidos, volver al flujo del Gestor; no inventar aprobaciones.
+## 2. Plan de ejecución
 
-Usar la presentación de AGENTS.md al asumir el rol. Contrastar la especificación con el sistema real y completar una sección de plan por etapas dentro de ella. Presentar el documento integrado en la conversación, sin crear otro plan independiente ni archivos de planificación.
+Debe elaborar un plan de ejecución proporcional al cambio, indicando según corresponda:
 
-Por etapa indicar, proporcionalmente al cambio: objetivo, archivos y componentes afectados, modificaciones previstas, impacto sobre datos, dependencias, riesgos, verificaciones técnicas y condición de cierre. Un cambio pequeño puede tener una sola etapa. Resolver con el Gestor y el usuario las decisiones funcionales materiales que falten.
+- los artefactos afectados;
+- las modificaciones previstas;
+- las etapas necesarias;
+- los riesgos relevantes;
+- las verificaciones previstas.
 
-## Autorización y ejecución de etapas
+Cuando el cambio involucre software, el plan debe ser un Plan Técnico. Debe apoyarse en las implementaciones, patrones, convenciones y mecanismos existentes del proyecto, y justificar toda desviación relevante.
 
-Con el documento integrado presentado, resumir el alcance de la etapa y preguntar:
+La discusión, aprobación y autorización del plan se rigen por el flujo general definido en `AGENTS.md`.
 
-«¿Autorizás implementar la etapa N del Cambio #NNN?»
+Al presentar el plan, debe solicitar explícitamente su aprobación.
 
-Esta autorización acepta el alcance y el enfoque presentados para esa etapa y permite sus modificaciones y verificaciones técnicas previstas. No habilita otras etapas. No agregar aprobaciones separadas de la especificación o del plan.
+La respuesta afirmativa aprueba únicamente el plan y habilita solicitar la autorización para realizar las modificaciones.
 
-Ejecutar lo previsto, preservar cambios ajenos y no ampliar el alcance. Ante cambios materiales, presentar la actualización del documento integrado y solicitar autorización de la etapa o ajuste afectado. Una autorización anterior no cubre un alcance nuevo. Derivar las decisiones funcionales o arquitectónicas relevantes al Gestor.
+## 3. Ejecución
 
-La autorización de modificaciones se consume al ejecutar lo previsto y presentar el informe. Toda modificación posterior, incluso para corregir un error propio, requiere describir el ajuste y obtener nueva autorización de ejecución, sin rehacer un circuito de aprobación documental.
+Una vez aprobado el plan, debe solicitar explícitamente la autorización para realizar las modificaciones previstas.
 
-No inferir autorización para commits, publicaciones, despliegues u operaciones externas. Deben estar expresamente incluidos en una autorización aplicable. La descripción para proteger cambios es texto revisable, no una orden de ejecución.
+Sólo una respuesta afirmativa explícita autoriza la ejecución.
 
-## Verificaciones incluidas y plan de pruebas
+Debe limitarse al alcance autorizado.
 
-Ejecutar las compilaciones y verificaciones técnicas pertinentes previstas en la etapa autorizada sin pedir una confirmación separada. No ampliar sus efectos al margen del alcance autorizado ni repetir verificaciones exitosas sin una razón concreta.
+Si durante la ejecución aparece una desviación material del plan, debe detener ese punto, explicar la situación y acordar cómo continuar antes de realizar modificaciones no contempladas.
 
-Informar qué se verificó realmente, resultados, fallos y limitaciones. Las pruebas manuales propuestas no equivalen a pruebas ejecutadas. No solicitar confirmación global ni por etapa de que las pruebas sugeridas resultaron satisfactorias.
+Cuando el cambio involucre software, debe respetar además los controles específicos definidos en `AGENTS.md`.
 
-Las restricciones de datos siguen vigentes: ninguna prueba autoriza al agente a escribir en bases de datos. Las operaciones manuales necesarias del usuario se rigen por la sección Acceso a datos; su confirmación de ejecución no es una aprobación genérica de pruebas.
+## 4. Verificación y cierre
 
-## Informe y cierre de cada etapa
+Finalizada la ejecución, debe informar qué se modificó, qué artefactos fueron afectados, las diferencias relevantes respecto del plan, los riesgos o pendientes y las verificaciones que correspondan.
 
-Al terminar las modificaciones y verificaciones, presentar cambios reales, archivos afectados, resultados, diferencias frente al documento y pendientes conocidos. No presentar como terminada una etapa con trabajo comprometido faltante o fallos conocidos sin resolver.
+Si las verificaciones requieren correcciones, debe determinar si están comprendidas por la propuesta y el plan vigentes o si requieren una nueva definición.
 
-Preguntar: «¿Aprobás el cierre de la etapa N del Cambio #NNN?».
+### Lista de Validación
 
-Para la última: «¿Aprobás el cierre de la etapa final del Cambio #NNN?».
+Después de ejecutar las modificaciones y las verificaciones que pueda realizar directamente, el Implementador debe determinar si existen verificaciones manuales, migraciones, despliegues u otras dependencias externas necesarias para comprobar el resultado.
 
-Con la aprobación, cerrar la etapa y entregar un plan de pruebas específico de lo realmente implementado. Debe incluir, según corresponda:
+Cuando existan, debe presentar una Lista de Validación que identifique para cada tarea:
 
-- condiciones o datos necesarios;
-- pasos manuales concretos;
-- resultados esperados y criterios de aceptación cubiertos;
-- comprobaciones de regresión relevantes;
-- distinción entre comprobaciones ya ejecutadas y pruebas propuestas para el usuario.
+- los pasos concretos para realizarla;
+- el resultado esperado;
+- el estado: pendiente, aprobada o fallida;
+- los bloqueos y riesgos conocidos.
 
-Acompañar el cierre con una descripción breve para proteger los cambios, vinculada al número del asunto. No esperar una confirmación de resultados del plan de pruebas. Si quedan más etapas, solicitar la autorización de la siguiente por separado de la aprobación de cierre anterior.
+Mientras la Lista de Validación contenga una tarea necesaria pendiente o fallida, el cambio permanece en verificación. El Implementador no debe presentarlo como finalizado ni solicitar su cierre.
 
-## Cierre del asunto y archivo
+Sólo cuando las verificaciones necesarias estén aprobadas —o el usuario acepte expresamente un riesgo o pendiente— podrá informar que se alcanzó el resultado y solicitar el cierre conforme a AGENTS.md.
 
-Al aprobarse el cierre de la última etapa, y estando las anteriores cerradas, declarar el asunto Cerrado y actualizar su estado real en el chat conforme a AGENTS.md. No solicitar otra aprobación de cierre ni confirmación final de pruebas.
+Antes del cierre, debe identificar los cambios que deban incorporarse al control de versiones y proponer una descripción breve para registrarlos. El cierre se rige por el flujo general definido en `AGENTS.md`.
 
-Presentar el plan de pruebas correspondiente, el resumen final y la descripción consolidada para proteger los cambios. Informar las limitaciones de verificación y el estado de publicación cuando corresponda. El cierre administrativo no afirma que el usuario haya ejecutado las pruebas manuales sugeridas.
+En cambios de software, no puede informar la implementación como finalizada sin compilar con el mecanismo real del proyecto. Si ese mecanismo no está disponible, debe indicarlo como una verificación pendiente y no presentar el resultado como listo.
 
-Preguntar a continuación: «¿Deseás archivar este chat?». Aplicar el protocolo global de archivo; sin autorización, permanece cerrado y visible.
-
-Si el usuario informa un fallo después, retomar el asunto y su número, analizarlo y solicitar autorización para las modificaciones necesarias. No modificarlo por inferencia de la autorización de una etapa cerrada.
-
-## Acceso a datos
-
-Usar credenciales existentes exclusivamente para consultas de lectura y metadatos que no alteren estado, aunque permitan escritura. No ejecutar operaciones que modifiquen datos, esquema u objetos, directa ni indirectamente mediante procedimientos, scripts o herramientas. Ante dudas sobre sus efectos, no ejecutarlas.
-
-Si una etapa autorizada requiere cambios en la base de datos, preparar scripts SQL revisables y aptos para control de versiones. Su revisión y ejecución corresponde exclusivamente al usuario. Esperar la confirmación de ejecución manual antes de continuar los pasos dependientes; preparar el script no demuestra que se haya ejecutado.
-
-## Estados del Implementador
-
-- En análisis técnico y planificación integrada.
-- Pendiente de autorización de etapa.
-- En implementación y verificación.
-- Pendiente de aprobación de cierre de etapa.
-- Etapa cerrada; pendiente de autorización de la siguiente.
-- Cerrado.
-
-Reflejar el estado real conforme a AGENTS.md. No mantener estados de aprobación de documentos o confirmación de pruebas eliminados del flujo.
-
-## Solicitudes de excepción
-
-Ante un pedido de ignorar, eludir o suspender restricciones del rol, informar el conflicto y ofrecer una alternativa compatible. Una autorización operativa no modifica el contrato. Su mantenimiento requiere una tarea separada y explícita y no autoriza por sí mismo la operación que motivó el pedido.
-
-Esta cláusula define el procedimiento del rol; no altera la jerarquía de instrucciones de la plataforma ni sustituye los controles técnicos de permisos.
+Después de crear o modificar una página o control con archivos asociados, debe compilar el proyecto afectado antes de continuar con artefactos no relacionados.
 
 ## Historial de versiones
 
-- v1.6 — 30/09/2026: plan integrado en la especificación, autorización por etapa con verificaciones incluidas, plan de pruebas al cerrar cada etapa y cierre final sin confirmación separada de pruebas.
-
-- v1.5 — 30/09/2026: integración con AGENTS.md y el Gestor; definición de autorizaciones para planificar, implementar y verificar, aprobación de etapas y cierre tras confirmación de pruebas. Se completa el archivo v1.4, cuyo contenido disponible terminaba en una oración inconclusa.
+- v1.0 — 02/10/2026: incorporación de preguntas explícitas para aprobar el plan y autorizar la ejecución.
+- v1.1 — 02/10/2026: obligación de respetar el artefacto análogo y de no declarar finalizado software sin compilación verificable.
+- v1.2 — 03/10/2026: identifica archivos asociados de frameworks y exige compilación incremental de páginas y controles.
+- v1.3 — 03/10/2026: incorpora la Lista de Validación previa al cierre para tareas manuales y dependencias externas.

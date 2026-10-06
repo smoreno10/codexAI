@@ -1,21 +1,13 @@
-# Ignorar todo el contenido de .codex
+# Ignorar todo .codex
 *
 
-# Excepto este archivo
+# Archivos que queremos versionar
 !.gitignore
-
-# AGENTS global
 !AGENTS.md
 
-# Carpeta de skills
+# Incluir skills
 !skills/
+!skills/**
 
-# Ignorar inicialmente todas las skills
-skills/*
-
-# Incluir solamente nuestras skills
-!skills/gestor-del-cambio/
-!skills/gestor-del-cambio/**
-
-!skills/implementador-del-cambio/
-!skills/implementador-del-cambio/**
+# Pero nunca las skills internas de Codex
+skills/.system/
