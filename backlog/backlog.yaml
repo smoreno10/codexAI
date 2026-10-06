@@ -17,6 +17,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-002
     proyecto: mi-contabilidad
@@ -26,6 +27,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-003
     proyecto: mi-contabilidad
@@ -35,6 +37,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-004
     proyecto: mi-contabilidad
@@ -45,6 +48,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-005
     proyecto: mi-contabilidad
@@ -54,6 +58,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-006
     proyecto: mi-contabilidad
@@ -63,6 +68,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-007
     proyecto: mi-contabilidad
@@ -72,6 +78,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-008
     proyecto: mi-contabilidad
@@ -81,6 +88,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-009
     proyecto: mi-contabilidad
@@ -90,6 +98,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-010
     proyecto: mi-contabilidad
@@ -99,6 +108,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-011
     proyecto: mi-contabilidad
@@ -108,6 +118,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-013
     proyecto: mi-contabilidad
@@ -117,6 +128,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A01
     proyecto: mi-contabilidad
@@ -126,6 +138,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A02
     proyecto: mi-contabilidad
@@ -135,6 +148,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A03
     proyecto: mi-contabilidad
@@ -144,6 +158,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A04
     proyecto: mi-contabilidad
@@ -154,6 +169,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A05
     proyecto: mi-contabilidad
@@ -163,6 +179,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-06'
+    observaciones: ''
 
   - id: MC-A06
     proyecto: mi-contabilidad
@@ -173,6 +190,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: 'No tenemos posibilidad de job sql ni windows. Pensamos en ante primer login, que emita la facturacion mensual. Quizas en planes, un boton de emitir facturacion, disponible para administrador estaria bien tambien.'
 
   - id: MC-A07
     proyecto: mi-contabilidad
@@ -183,6 +201,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A08
     proyecto: mi-contabilidad
@@ -193,6 +212,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A09
     proyecto: mi-contabilidad
@@ -203,6 +223,8 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
+
 
   - id: MC-A10
     proyecto: mi-contabilidad
@@ -212,6 +234,7 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
 
   - id: MC-A11
     proyecto: mi-contabilidad
@@ -221,3 +244,4 @@ cambios:
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
+    observaciones: ''
