@@ -1,6 +1,6 @@
 ---
 name: sincronizador-codex
-description: Sincroniza de forma segura AGENTS.md y las skills propias entre instalaciones de Codex mediante el repositorio codexAI.
+description: Sincroniza de forma segura AGENTS.md, las skills propias y el backlog global entre instalaciones de Codex mediante el repositorio codexAI.
 ---
 
 # Sincronizador de Codex
@@ -20,5 +20,6 @@ Para el procedimiento operativo, los límites y los estados de detención, aplic
 
 ## Historial de versiones
 
+- v1.2 — 05/10/2026: incorpora el backlog global dentro del alcance sincronizable.
 - v1.1 — 05/10/2026: precisa el alcance de Diagnostico y unifica la nomenclatura de Commit.
 - v1.0 — 05/10/2026: creación de la skill de sincronización segura de configuración de Codex.

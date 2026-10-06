@@ -2,13 +2,14 @@
 
 ## 1. Alcance y responsabilidad
 
-Esta skill sincroniza exclusivamente `.gitignore`, `AGENTS.md` y las skills propias de Codex a través del repositorio `smoreno10/codexAI`. El `SKILL.md` conduce la conversación y las autorizaciones humanas; `sync-codex.ps1` verifica el estado técnico y ejecuta operaciones Git acotadas.
+Esta skill sincroniza exclusivamente `.gitignore`, `AGENTS.md`, las skills propias de Codex y el backlog global a través del repositorio `smoreno10/codexAI`. El `SKILL.md` conduce la conversación y las autorizaciones humanas; `sync-codex.ps1` verifica el estado técnico y ejecuta operaciones Git acotadas.
 
 La lista permitida es:
 
 ```text
 .gitignore
 AGENTS.md
+backlog/**
 skills/**, excepto skills/.system/**
 ```
 
@@ -41,5 +42,6 @@ Un rechazo o error de Git se considera un resultado seguro: se conserva el árbo
 
 ## Historial de versiones
 
+- v1.2 — 05/10/2026: incorpora `backlog/` a la política de contenido sincronizable.
 - v1.1 — 05/10/2026: define la autorización rutinaria y precisa los límites sobre `.gitignore`.
 - v1.0 — 05/10/2026: define el protocolo, controles y límites de la sincronización segura.

@@ -9,5 +9,9 @@
 !skills/
 !skills/**
 
+# Incluir backlog
+!backlog/
+!backlog/**
+
 # Pero nunca las skills internas de Codex
 skills/.system/

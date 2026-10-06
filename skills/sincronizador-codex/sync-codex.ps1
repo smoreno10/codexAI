@@ -13,6 +13,7 @@ $ErrorActionPreference = 'Stop'
 $RutaRaiz = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))
 $RutasPermitidas = @('.gitignore', 'AGENTS.md')
 $PatronSkillPropia = '^skills/(?!\.system(?:/|$)).+'
+$PatronBacklog = '^backlog/.+'
 $PatronRemoto = '^(https://github\.com/|git@github\.com:|ssh://git@github\.com/)smoreno10/codexAI(?:\.git)?/?$'
 
 function Ejecutar-Git {
@@ -32,7 +33,7 @@ function Exigir-Git {
 
 function Es-Ruta-Permitida {
     param([string]$Ruta)
-    return $Ruta -in $RutasPermitidas -or $Ruta -match $PatronSkillPropia
+    return $Ruta -in $RutasPermitidas -or $Ruta -match $PatronSkillPropia -or $Ruta -match $PatronBacklog
 }
 
 function Obtener-Estado {
@@ -92,7 +93,7 @@ switch ($Accion) {
         if ($Estado.OperacionesEnCurso.Count -gt 0) { throw "Commit no puede continuar: hay una operación Git en curso ($($Estado.OperacionesEnCurso -join ', '))." }
         $Relacion = Actualizar-ReferenciaRemota
         if ($Relacion.SoloRemoto -gt 0) { throw 'Commit no puede continuar: la rama local está atrasada o ha divergido.' }
-        Exigir-Git 'add', '--', '.gitignore', 'AGENTS.md', 'skills' | Out-Null
+        Exigir-Git 'add', '--', '.gitignore', 'AGENTS.md', 'skills', 'backlog' | Out-Null
         $Preparado = Ejecutar-Git 'diff', '--cached', '--quiet'
         if ($Preparado.CodigoSalida -eq 0) { Write-Output 'No hay cambios permitidos para confirmar; no se creó un commit.'; break }
         if ($Preparado.CodigoSalida -ne 1) { throw "No fue posible revisar los cambios preparados. $($Preparado.Salida -join [Environment]::NewLine)" }

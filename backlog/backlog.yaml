@@ -1,0 +1,154 @@
+version: 1
+
+proyectos:
+  - id: mi-contabilidad
+    nombre: MiContabilidad
+    entorno: casa
+    backlog_local: 'D:\Proyectos\MiContabilidad\backlog.md'
+    task_backlog: 'thread://01a0eb67-13b8-73e0-82bb-f5e89c0311d6?hostId=local'
+    ultima_revision: '2026-10-05'
+
+cambios:
+  - id: MC-001
+    proyecto: mi-contabilidad
+    referencia_original: '#001'
+    titulo: Empresa a base de datos por empresa
+    estado: postergado
+
+  - id: MC-002
+    proyecto: mi-contabilidad
+    referencia_original: '#002'
+    titulo: Gestión de usuarios
+    estado: cerrado
+
+  - id: MC-003
+    proyecto: mi-contabilidad
+    referencia_original: '#003'
+    titulo: Clientes y proveedores
+    estado: cerrado
+
+  - id: MC-004
+    proyecto: mi-contabilidad
+    referencia_original: '#004'
+    titulo: Cuentas corrientes
+    estado: cerrado
+    depende_de: [MC-003]
+
+  - id: MC-005
+    proyecto: mi-contabilidad
+    referencia_original: '#005'
+    titulo: Seguridad de accesos y redireccionamientos
+    estado: cerrado
+
+  - id: MC-006
+    proyecto: mi-contabilidad
+    referencia_original: '#006'
+    titulo: Auditoría y logs
+    estado: postergado
+
+  - id: MC-007
+    proyecto: mi-contabilidad
+    referencia_original: '#007'
+    titulo: WSFE
+    estado: postergado
+
+  - id: MC-008
+    proyecto: mi-contabilidad
+    referencia_original: '#008'
+    titulo: Comparativa de ingresos y gastos
+    estado: postergado
+
+  - id: MC-009
+    proyecto: mi-contabilidad
+    referencia_original: '#009'
+    titulo: Drill-down de ingresos y gastos
+    estado: postergado
+
+  - id: MC-010
+    proyecto: mi-contabilidad
+    referencia_original: '#010'
+    titulo: Acceso desde Compras
+    estado: postergado
+
+  - id: MC-011
+    proyecto: mi-contabilidad
+    referencia_original: '#011'
+    titulo: Navegación de medios de pago
+    estado: cerrado
+
+  - id: MC-013
+    proyecto: mi-contabilidad
+    referencia_original: '#013'
+    titulo: Alumno sobre Cliente
+    estado: cerrado
+
+  - id: MC-A01
+    proyecto: mi-contabilidad
+    referencia_original: A01
+    titulo: Profesores
+    estado: cerrado
+
+  - id: MC-A02
+    proyecto: mi-contabilidad
+    referencia_original: A02
+    titulo: Disciplinas
+    estado: cerrado
+
+  - id: MC-A03
+    proyecto: mi-contabilidad
+    referencia_original: A03
+    titulo: Clases y horarios
+    estado: cerrado
+
+  - id: MC-A04
+    proyecto: mi-contabilidad
+    referencia_original: A04
+    titulo: Alumno sobre Cliente en Academia
+    estado: cerrado
+    depende_de: [MC-013]
+
+  - id: MC-A05
+    proyecto: mi-contabilidad
+    referencia_original: A05
+    titulo: Planes
+    estado: pendiente
+
+  - id: MC-A06
+    proyecto: mi-contabilidad
+    referencia_original: A06
+    titulo: Cuotas
+    estado: pendiente
+    depende_de: [MC-A05]
+
+  - id: MC-A07
+    proyecto: mi-contabilidad
+    referencia_original: A07
+    titulo: Asistencias
+    estado: cerrado
+    depende_de: [MC-A03]
+
+  - id: MC-A08
+    proyecto: mi-contabilidad
+    referencia_original: A08
+    titulo: QR
+    estado: pendiente
+    depende_de: [MC-A07]
+
+  - id: MC-A09
+    proyecto: mi-contabilidad
+    referencia_original: A09
+    titulo: Lista sugerida o DNI
+    estado: pendiente
+    depende_de: [MC-A07]
+
+  - id: MC-A10
+    proyecto: mi-contabilidad
+    referencia_original: A10
+    titulo: Encuestas
+    estado: pendiente
+
+  - id: MC-A11
+    proyecto: mi-contabilidad
+    referencia_original: A11
+    titulo: Galería o Tienda
+    estado: pendiente
