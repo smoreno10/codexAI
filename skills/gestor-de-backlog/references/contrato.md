@@ -16,10 +16,17 @@ Los estados permitidos son `idea`, `pendiente`, `postergado`, `analisis`, `plan_
 
 No debe inferir ni registrar automáticamente un estado. Para `cerrado` debe conservar evidencia de validación y obtener confirmación explícita de la persona usuaria. Para `descartado` conserva el registro y la justificación.
 
-## 4. Límites
+## 4. Fechas de trazabilidad
+
+Cada cambio debe registrar `fecha_creacion`, `fecha_registro` y `fecha_ultima_actualizacion` en formato `YYYY-MM-DD`.
+
+Al crear un nuevo registro se completan las tres fechas. En una modificación posterior sólo se actualiza `fecha_ultima_actualizacion`.
+
+## 5. Límites
 
 No inicia tareas de implementación, no modifica proyectos locales y no sustituye los procedimientos de análisis, planificación, ejecución, verificación ni cierre definidos en `AGENTS.md`.
 
 ## Historial de versiones
 
+- v1.1 — 05/10/2026: incorpora fechas obligatorias de trazabilidad por cambio.
 - v1.0 — 05/10/2026: define el alcance y controles de la gestión del backlog global.

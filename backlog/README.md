@@ -5,3 +5,12 @@
 ## Uso
 
 Usar `$gestor-de-backlog` para consultar, proponer altas o cambios y registrar actualizaciones autorizadas. El backlog no modifica proyectos locales ni actualiza estados automáticamente en esta primera etapa.
+
+
+## Fechas
+
+Cada cambio registra:
+
+- `fecha_creacion`: fecha de creación del registro en el backlog global.
+- `fecha_registro`: fecha de incorporación al backlog global.
+- `fecha_ultima_actualizacion`: fecha de la última modificación de su información o estado.

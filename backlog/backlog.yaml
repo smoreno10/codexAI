@@ -14,18 +14,27 @@ cambios:
     referencia_original: '#001'
     titulo: Empresa a base de datos por empresa
     estado: postergado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-002
     proyecto: mi-contabilidad
     referencia_original: '#002'
     titulo: Gestión de usuarios
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-003
     proyecto: mi-contabilidad
     referencia_original: '#003'
     titulo: Clientes y proveedores
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-004
     proyecto: mi-contabilidad
@@ -33,72 +42,108 @@ cambios:
     titulo: Cuentas corrientes
     estado: cerrado
     depende_de: [MC-003]
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-005
     proyecto: mi-contabilidad
     referencia_original: '#005'
     titulo: Seguridad de accesos y redireccionamientos
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-006
     proyecto: mi-contabilidad
     referencia_original: '#006'
     titulo: Auditoría y logs
     estado: postergado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-007
     proyecto: mi-contabilidad
     referencia_original: '#007'
     titulo: WSFE
     estado: postergado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-008
     proyecto: mi-contabilidad
     referencia_original: '#008'
     titulo: Comparativa de ingresos y gastos
     estado: postergado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-009
     proyecto: mi-contabilidad
     referencia_original: '#009'
     titulo: Drill-down de ingresos y gastos
     estado: postergado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-010
     proyecto: mi-contabilidad
     referencia_original: '#010'
     titulo: Acceso desde Compras
     estado: postergado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-011
     proyecto: mi-contabilidad
     referencia_original: '#011'
     titulo: Navegación de medios de pago
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-013
     proyecto: mi-contabilidad
     referencia_original: '#013'
     titulo: Alumno sobre Cliente
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A01
     proyecto: mi-contabilidad
     referencia_original: A01
     titulo: Profesores
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A02
     proyecto: mi-contabilidad
     referencia_original: A02
     titulo: Disciplinas
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A03
     proyecto: mi-contabilidad
     referencia_original: A03
     titulo: Clases y horarios
     estado: cerrado
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A04
     proyecto: mi-contabilidad
@@ -106,12 +151,18 @@ cambios:
     titulo: Alumno sobre Cliente en Academia
     estado: cerrado
     depende_de: [MC-013]
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A05
     proyecto: mi-contabilidad
     referencia_original: A05
     titulo: Planes
     estado: pendiente
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A06
     proyecto: mi-contabilidad
@@ -119,6 +170,9 @@ cambios:
     titulo: Cuotas
     estado: pendiente
     depende_de: [MC-A05]
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A07
     proyecto: mi-contabilidad
@@ -126,6 +180,9 @@ cambios:
     titulo: Asistencias
     estado: cerrado
     depende_de: [MC-A03]
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A08
     proyecto: mi-contabilidad
@@ -133,6 +190,9 @@ cambios:
     titulo: QR
     estado: pendiente
     depende_de: [MC-A07]
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A09
     proyecto: mi-contabilidad
@@ -140,15 +200,24 @@ cambios:
     titulo: Lista sugerida o DNI
     estado: pendiente
     depende_de: [MC-A07]
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A10
     proyecto: mi-contabilidad
     referencia_original: A10
     titulo: Encuestas
     estado: pendiente
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
 
   - id: MC-A11
     proyecto: mi-contabilidad
     referencia_original: A11
     titulo: Galería o Tienda
     estado: pendiente
+    fecha_creacion: '2026-10-05'
+    fecha_registro: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-05'
