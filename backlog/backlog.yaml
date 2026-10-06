@@ -8,6 +8,11 @@ proyectos:
     task_backlog: 'thread://01a0eb67-13b8-73e0-82bb-f5e89c0311d6?hostId=local'
     ultima_revision: '2026-10-05'
 
+  - id: bunge
+    nombre: Bunge
+    entorno: oficina
+    ultima_revision: '2026-10-06'
+
 cambios:
   - id: MC-001
     proyecto: mi-contabilidad
@@ -245,3 +250,24 @@ cambios:
     fecha_registro: '2026-10-05'
     fecha_ultima_actualizacion: '2026-10-05'
     observaciones: ''
+
+  - id: BUNGE-CHG2305720
+    proyecto: bunge
+    referencia_original: CHG2305720
+    titulo: BASA - Reactivar Descarga de TXT con detalle de ND y NC en WEB usando conversión de PDFs
+    estado: pendiente
+    fecha_creacion: '2026-06-26'
+    fecha_registro: '2026-10-06'
+    fecha_ultima_actualizacion: '2026-10-06'
+    observaciones: 'Solicita: Hernán San Juan, 26/06/2026.'
+
+  - id: MC-A12
+    proyecto: mi-contabilidad
+    referencia_original: A12
+    titulo: Control de asistencias según el límite mensual del plan
+    estado: pendiente
+    depende_de: [MC-A05, MC-A07]
+    fecha_creacion: '2026-10-06'
+    fecha_registro: '2026-10-06'
+    fecha_ultima_actualizacion: '2026-10-06'
+    observaciones: 'Al registrar una asistencia, tomar el máximo configurado en el plan del alumno y rechazar el registro si supera ese límite dentro del mes calendario. Ejemplo: Plan Básico con máximo 12 permite la asistencia 12 y rechaza la 13 en el mismo mes.'
