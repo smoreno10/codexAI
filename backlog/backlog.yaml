@@ -259,7 +259,27 @@ cambios:
     fecha_creacion: '2026-06-26'
     fecha_registro: '2026-10-06'
     fecha_ultima_actualizacion: '2026-10-06'
-    observaciones: 'Solicita: Hernán San Juan, 26/06/2026.'
+    observaciones: 'Solicita: Hernán San Juan, 26/06/2026. Estamos esperando que este lista la API de parte de los chicos de PowerBI'
+
+  - id: BUNGE-REQ464686
+    proyecto: bunge
+    referencia_original: REQ464686
+    titulo: BASA - Mostrar DIRECTO en corredor de carátula de la ficha del contrato
+    estado: cerrado
+    fecha_creacion: '2026-10-06'
+    fecha_registro: '2026-10-06'
+    fecha_ultima_actualizacion: '2026-10-06'
+    observaciones: 'Solicita: Mauricio Pighin, 06/10/2026. Implementado en ucFichaContrato.ascx.vb: muestra DIRECTO cuando mat_cliente y mat_corredor coinciden. Compilación aprobada y pruebas locales verificadas: 32.47742 muestra DIRECTO; 99.1000691358 conserva la razón social. Cierre confirmado explícitamente por el usuario. Check-in no realizado por Codex.'
+
+  - id: BUNGE-ANALISIS-ALFANUMERICOS
+    proyecto: bunge
+    referencia_original: CHGxxxxxx
+    titulo: BASA - Modificar Descarga de Análisis para contemplar certificados con letras
+    estado: cerrado
+    fecha_creacion: '2026-10-02'
+    fecha_registro: '2026-10-06'
+    fecha_ultima_actualizacion: '2026-10-06'
+    observaciones: 'Solicita: Marcos Riva, 02/10/2026. Referencia provisoria: CHGxxxxxx. La descarga de análisis fallaba al interpretar como número el certificado alfanumérico X086044. Se realizó el cambio para admitir certificados con letras, según confirmación del usuario. Evidencia de prueba en una imagen externa indicada por el usuario, no adjunta a este registro. Alta informativa en estado cerrado solicitada y autorizada por el usuario.'
 
   - id: MC-A12
     proyecto: mi-contabilidad
