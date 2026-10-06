@@ -159,10 +159,10 @@ cambios:
     proyecto: mi-contabilidad
     referencia_original: A05
     titulo: Planes
-    estado: pendiente
+    estado: cerrado
     fecha_creacion: '2026-10-05'
     fecha_registro: '2026-10-05'
-    fecha_ultima_actualizacion: '2026-10-05'
+    fecha_ultima_actualizacion: '2026-10-06'
 
   - id: MC-A06
     proyecto: mi-contabilidad
