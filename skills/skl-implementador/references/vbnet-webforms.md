@@ -44,9 +44,30 @@ If condicion Then accion1() : accion2()
 ## Biblioteca de clases
 
 - **Entidades**: representan datos y propiedades. No contienen SQL, controles Web Forms ni reglas de presentación.
+
+Ejemplo de como escribir una clase en Entidades: 
+
+Namespace Entidades
+
+	Public Class MiEntidades
+
+	    Public Property MiEntidadId As Integer
+
+	    Public Property MiEntidadNombre As String
+
+	    .
+
+	    .
+
+	    .
+
+	End Class
+
+End Namespace
+
 - **Datos**: encapsulan acceso a datos. Usan los mecanismos, transacciones, consultas parametrizadas y tipos de comando establecidos por el proyecto. No contienen HTML ni decisiones de interfaz.
  
-Ejemplo de como escribir una clase en datos: 
+Ejemplo de como escribir una clase en Datos: 
 
 Imports System.Data.SqlClient
 Imports clases.Entidades
@@ -62,14 +83,15 @@ Namespace Datos
 
             qry.AppendLine("SELECT")
             qry.AppendLine("	MiEntidadId
-            qry.AppendLine("	,.")
+            qry.AppendLine("	,MiEntidadNombre")
             qry.AppendLine("	,.")
             qry.AppendLine("FROM")
-            qry.AppendLine("	NUEVAS.MiEntidades")
+            qry.AppendLine("	MiEntidades")
             qry.AppendLine("WHERE")
             qry.AppendLine("	MiEntidadId= 3")
             qry.AppendLine("ORDER BY")
-            qry.AppendLine("	.")
+            qry.AppendLine("	MiEntidadId")
+            qry.AppendLine("	,MiEntidadNombre")
 
             cmd.CommandText = qry.ToString
 
@@ -82,12 +104,12 @@ Namespace Datos
             Dim cmd As New SqlCommand
 
             qry.AppendLine("UPDATE")
-            qry.AppendLine("    NUEVAS.MiEntidades")
+            qry.AppendLine("    MiEntidades")
             qry.AppendLine("SET")
             qry.AppendLine("    MiEntidadNombre = @MiEntidadNombre")
             qry.AppendLine("    ,.")
             qry.AppendLine("WHERE")
-            qry.AppendLine("    NUEVAS.MiEntidadId = @MiEntidadId")
+            qry.AppendLine("    MiEntidadId = @MiEntidadId")
    
 
             cmd.Parameters.Add(CrearParametro("MiEntidadId", MiEntidad.MiEntidadId, SqlDbType.Int))
@@ -100,9 +122,31 @@ Namespace Datos
     End Class
 End Namespace
 
-
-
 - **Negocio**: contiene validaciones y reglas funcionales, y mapea entre entidades y los resultados de Datos según el patrón existente. No accede a controles Web Forms ni incorpora SQL de interfaz.
+
+Ejemplo de como escribir una clase en Negocio: 
+
+Namespace Negocio
+	Public Class MiEntidad
+
+	    Private Shared Function Obtener() As List(Of Entidades.MiEntidad)
+        	Dim tabla As DataTable = Datos.MiEntidad._Obtener()
+        	Dim res As New List(Of Entidades.MiEntidad)
+
+	        If tabla IsNot Nothing AndAlso tabla.Rows.Count > 0 Then
+        	    res.AddRange((From fila In tabla
+                	          Select New Entidades.MiEntidad With {
+                        	      .MiEntidadId = fila.Field(Of Integer)("MiEntidadId"),
+                              	      .MiEntidadNombre = fila.Field(Of String)("MiEntidadNombre"),
+                                      .
+                                  }).ToList)
+                End If
+
+                Return res
+    	    End Function
+	End Class
+
+End Namespace
 
 Una funcionalidad que atraviesa capas conserva el recorrido `UI → Negocio → Datos → Entidades`, sin saltar responsabilidades.
 
