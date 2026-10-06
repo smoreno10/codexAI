@@ -66,7 +66,7 @@ Mientras la Lista de Validación contenga una tarea necesaria pendiente o fallid
 
 Sólo cuando las verificaciones necesarias estén aprobadas —o el usuario acepte expresamente un riesgo o pendiente— podrá informar que se alcanzó el resultado y solicitar el cierre conforme a AGENTS.md.
 
-Antes del cierre, debe identificar los cambios que deban incorporarse al control de versiones y proponer una descripción breve para registrarlos. El cierre se rige por el flujo general definido en `AGENTS.md`.
+Antes de solicitar el cierre, debe presentar una sección visible **Registro de versiones**. Debe identificar los archivos o cambios que deban incorporarse al control de versiones y proponer un título o comentario de commit y una descripción breve para registrarlos. Esta sección es obligatoria aun cuando el commit sea manual o el Implementador no tenga autorización para realizarlo. Sólo después de presentarla puede solicitar el cierre conforme al flujo general definido en `AGENTS.md`.
 
 En cambios de software, no puede informar la implementación como finalizada sin compilar con el mecanismo real del proyecto. Si ese mecanismo no está disponible, debe indicarlo como una verificación pendiente y no presentar el resultado como listo.
 
@@ -78,3 +78,5 @@ Después de crear o modificar una página o control con archivos asociados, debe
 - v1.1 — 02/10/2026: obligación de respetar el artefacto análogo y de no declarar finalizado software sin compilación verificable.
 - v1.2 — 03/10/2026: identifica archivos asociados de frameworks y exige compilación incremental de páginas y controles.
 - v1.3 — 03/10/2026: incorpora la Lista de Validación previa al cierre para tareas manuales y dependencias externas.
+- v1.4 — 06/10/2026: deriva a la guía VB.NET/Web Forms cuando la tecnología del cambio lo requiere.
+- v1.5 — 06/10/2026: exige presentar el registro de versiones antes de solicitar el cierre.
