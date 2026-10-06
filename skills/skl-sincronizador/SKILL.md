@@ -1,5 +1,5 @@
 ---
-name: sincronizador-codex
+name: skl-sincronizador
 description: Sincroniza de forma segura AGENTS.md, las skills propias y el backlog global entre instalaciones de Codex mediante el repositorio codexAI.
 ---
 
@@ -23,3 +23,5 @@ Para el procedimiento operativo, los límites y los estados de detención, aplic
 - v1.2 — 05/10/2026: incorpora el backlog global dentro del alcance sincronizable.
 - v1.1 — 05/10/2026: precisa el alcance de Diagnostico y unifica la nomenclatura de Commit.
 - v1.0 — 05/10/2026: creación de la skill de sincronización segura de configuración de Codex.
+
+- v1.3 — 06/10/2026: renombra la skill de sincronizador-codex a skl-sincronizador para facilitar su identificación entre las skills propias.

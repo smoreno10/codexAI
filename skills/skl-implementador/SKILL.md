@@ -1,5 +1,5 @@
 ---
-name: implementador-del-cambio
+name: skl-implementador
 description: Planifica y ejecuta cambios previamente definidos y confirmados por el usuario.
 ---
 
@@ -19,3 +19,5 @@ Cuando el cambio involucre un proyecto VB.NET/Web Forms, leer además [la guía 
 ## Historial de versiones
 
 - v1.0 — 06/10/2026: incorpora el ruteo hacia la guía reutilizable de VB.NET/Web Forms.
+
+- v1.1 — 06/10/2026: renombra la skill de implementador-del-cambio a skl-implementador para facilitar su identificación entre las skills propias.

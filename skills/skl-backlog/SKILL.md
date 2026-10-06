@@ -1,5 +1,5 @@
 ---
-name: gestor-de-backlog
+name: skl-backlog
 description: Mantiene y consulta el backlog global versionado de cambios entre proyectos.
 ---
 
@@ -16,3 +16,5 @@ Para los límites y el procedimiento operativo, aplicar íntegramente [el contra
 ## Historial de versiones
 
 - v1.0 — 05/10/2026: creación de la skill de gestión del backlog global.
+
+- v1.1 — 06/10/2026: renombra la skill de gestor-de-backlog a skl-backlog para facilitar su identificación entre las skills propias.

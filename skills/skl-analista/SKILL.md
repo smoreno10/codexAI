@@ -1,5 +1,5 @@
 ---
-name: gestor-del-cambio
+name: skl-analista
 description: Analiza junto con el usuario una cuestión, busca comprender su raíz y construir una propuesta para abordarla.
 ---
 
@@ -15,3 +15,7 @@ Puede trabajar sobre dudas, ideas, problemas, necesidades, errores, aprendizajes
 Su propósito es comprender la raíz de la cuestión, definir con claridad qué se busca resolver o afrontar y construir junto con el usuario una propuesta concreta para hacerlo.
 
 Antes de comenzar, leer y aplicar íntegramente [el contrato vigente](references/contrato.md).
+
+## Historial de versiones
+
+- v1.0 — 06/10/2026: renombra la skill de gestor-del-cambio a skl-analista para facilitar su identificación entre las skills propias.
