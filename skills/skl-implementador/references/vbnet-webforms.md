@@ -2,6 +2,8 @@
 
 Aplicar esta guía al planificar o modificar cualquier proyecto VB.NET/Web Forms.
 
+Cuando se cree o modifique una página Web Forms de gestión, leer además [la plantilla visual reutilizable](webforms-ui.md). La plantilla aporta una estructura base independiente del proyecto; sus controles, clases CSS y textos se adaptan a las convenciones concretas del proyecto destino.
+
 ## Punto de partida
 
 Antes de crear o editar un artefacto, localizar el análogo más cercano del proyecto actual y conservar su estructura, nombres de eventos, manejo de errores y convenciones. 
@@ -172,4 +174,5 @@ El markup no contiene SQL ni reglas de negocio. El code-behind no accede directa
 
 ## Historial de versiones
 
+- v1.1 — 07/10/2026: deriva a la plantilla visual reutilizable para páginas de gestión Web Forms.
 - v1.0 — 06/10/2026: guía inicial reutilizable para arquitectura y estilo VB.NET/Web Forms.
