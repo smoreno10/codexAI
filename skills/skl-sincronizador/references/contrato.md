@@ -9,7 +9,7 @@ Rutas permitidas:
 - AGENTS.md
 - skills/**, excepto skills/.system/**
 
-El script debe rechazar cualquier archivo rastreado fuera de esta lista antes de preparar, confirmar o publicar cambios. La única excepción transitoria es backlog/README.md cuando falta en el árbol de trabajo: se permite únicamente preparar su eliminación, nunca agregar o modificar contenido bajo backlog/.
+El script debe rechazar cualquier archivo rastreado fuera de esta lista antes de preparar, confirmar o publicar cambios.
 ## 2. Protocolo operativo
 
 1. Ejecutar `Diagnostico` antes de cualquier acción mutante y presentar su resultado.
@@ -35,7 +35,6 @@ No debe usar `stash`, `reset`, `rebase`, merge automático, resolución automát
 
 Los catálogos codexAIBackLogCasa y codexAIBackLogOficina se administran en sus propios repositorios. Ni esta skill ni sync-codex.ps1 deben consultarlos, actualizarlos, confirmarlos o publicarlos. Los backlogs de proyecto se gestionan mediante skl-backlog y no se incorporan al repositorio codexAI.
 
-La única excepción transitoria permite retirar backlog/README.md, ya rastreado, cuando no existe en el árbol de trabajo. La acción Commit puede preparar sólo esa eliminación exacta. No se permite agregar ni modificar contenido bajo backlog/.
 ## 6. Resultado y transición
 
 Un rechazo o error de Git se considera un resultado seguro: se conserva el árbol de trabajo y cualquier commit local existente. La resolución de conflictos, cambios locales o ajustes de política queda bajo control de la persona usuaria y requiere una nueva acción explícita.
@@ -51,3 +50,5 @@ Un rechazo o error de Git se considera un resultado seguro: se conserva el árbo
 - v1.4 — 08/10/2026: excluye repositorios de catálogos y backlogs de proyecto; permite sólo la eliminación del backlog legado.
 
 - v1.5 — 08/10/2026: elimina la documentación bajo backlog/ y permite sólo retirar su archivo rastreado.
+
+- v1.6 — 08/10/2026: elimina la excepción transitoria y excluye cualquier ruta bajo backlog/.

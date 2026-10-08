@@ -32,11 +32,7 @@ function Exigir-Git {
 
 function Es-Ruta-Permitida {
     param([string]$Ruta)
-    if ($Ruta -in $RutasPermitidas -or $Ruta -match $PatronSkillPropia) { return $true }
-    if ($Ruta -eq 'backlog/README.md') {
-        return -not (Test-Path -LiteralPath (Join-Path $RutaRaiz $Ruta) -PathType Leaf)
-    }
-    return $false
+    return $Ruta -in $RutasPermitidas -or $Ruta -match $PatronSkillPropia
 }
 
 function Obtener-Estado {
@@ -97,11 +93,6 @@ switch ($Accion) {
         $Relacion = Actualizar-ReferenciaRemota
         if ($Relacion.SoloRemoto -gt 0) { throw 'Commit no puede continuar: la rama local está atrasada o ha divergido.' }
         Exigir-Git 'add', '--', '.gitignore', 'AGENTS.md', 'skills' | Out-Null
-        $RutaDocumentacion = 'backlog/README.md'
-        $DocumentacionEnIndice = Ejecutar-Git 'ls-files', '--error-unmatch', $RutaDocumentacion
-        if ($DocumentacionEnIndice.CodigoSalida -eq 0 -and -not (Test-Path -LiteralPath (Join-Path $RutaRaiz $RutaDocumentacion) -PathType Leaf)) {
-            Exigir-Git 'add', '-u', '--', $RutaDocumentacion | Out-Null
-        }
         $Preparado = Ejecutar-Git 'diff', '--cached', '--quiet'
         if ($Preparado.CodigoSalida -eq 0) { Write-Output 'No hay cambios permitidos para confirmar; no se creó un commit.'; break }
         if ($Preparado.CodigoSalida -ne 1) { throw "No fue posible revisar los cambios preparados. $($Preparado.Salida -join [Environment]::NewLine)" }
@@ -118,3 +109,4 @@ switch ($Accion) {
 # Historial de versiones
 # v1.0 — 08/10/2026: limita el sincronizador a instrucciones y skills; admite sólo retirar el backlog legado exacto.
 # v1.1 — 08/10/2026: deja de incluir backlog/ y admite sólo retirar el README rastreado.
+# v1.2 — 08/10/2026: elimina la excepción de eliminación bajo backlog/.
