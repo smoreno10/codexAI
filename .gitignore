@@ -9,12 +9,9 @@
 !skills/
 !skills/**
 
-# Mantener sólo la documentación del esquema
-!backlog/
-!backlog/README.md
-
 # Pero nunca las skills internas de Codex
 skills/.system/
 
 # Historial de versiones
 # v1.0 — 08/10/2026: deja de incluir datos de backlog/ en codexAI.
+# v1.1 — 08/10/2026: deja de incluir cualquier ruta bajo backlog/.

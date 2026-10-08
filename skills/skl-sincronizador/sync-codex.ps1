@@ -32,8 +32,8 @@ function Exigir-Git {
 
 function Es-Ruta-Permitida {
     param([string]$Ruta)
-    if ($Ruta -in $RutasPermitidas -or $Ruta -match $PatronSkillPropia -or $Ruta -eq 'backlog/README.md') { return $true }
-    if ($Ruta -eq 'backlog/backlog.yaml') {
+    if ($Ruta -in $RutasPermitidas -or $Ruta -match $PatronSkillPropia) { return $true }
+    if ($Ruta -eq 'backlog/README.md') {
         return -not (Test-Path -LiteralPath (Join-Path $RutaRaiz $Ruta) -PathType Leaf)
     }
     return $false
@@ -96,11 +96,11 @@ switch ($Accion) {
         if ($Estado.OperacionesEnCurso.Count -gt 0) { throw "Commit no puede continuar: hay una operación Git en curso ($($Estado.OperacionesEnCurso -join ', '))." }
         $Relacion = Actualizar-ReferenciaRemota
         if ($Relacion.SoloRemoto -gt 0) { throw 'Commit no puede continuar: la rama local está atrasada o ha divergido.' }
-        Exigir-Git 'add', '--', '.gitignore', 'AGENTS.md', 'skills', 'backlog/README.md' | Out-Null
-        $RutaLegada = 'backlog/backlog.yaml'
-        $LegadoEnIndice = Ejecutar-Git 'ls-files', '--error-unmatch', $RutaLegada
-        if ($LegadoEnIndice.CodigoSalida -eq 0 -and -not (Test-Path -LiteralPath (Join-Path $RutaRaiz $RutaLegada) -PathType Leaf)) {
-            Exigir-Git 'add', '-u', '--', $RutaLegada | Out-Null
+        Exigir-Git 'add', '--', '.gitignore', 'AGENTS.md', 'skills' | Out-Null
+        $RutaDocumentacion = 'backlog/README.md'
+        $DocumentacionEnIndice = Ejecutar-Git 'ls-files', '--error-unmatch', $RutaDocumentacion
+        if ($DocumentacionEnIndice.CodigoSalida -eq 0 -and -not (Test-Path -LiteralPath (Join-Path $RutaRaiz $RutaDocumentacion) -PathType Leaf)) {
+            Exigir-Git 'add', '-u', '--', $RutaDocumentacion | Out-Null
         }
         $Preparado = Ejecutar-Git 'diff', '--cached', '--quiet'
         if ($Preparado.CodigoSalida -eq 0) { Write-Output 'No hay cambios permitidos para confirmar; no se creó un commit.'; break }
@@ -117,3 +117,4 @@ switch ($Accion) {
 
 # Historial de versiones
 # v1.0 — 08/10/2026: limita el sincronizador a instrucciones y skills; admite sólo retirar el backlog legado exacto.
+# v1.1 — 08/10/2026: deja de incluir backlog/ y admite sólo retirar el README rastreado.

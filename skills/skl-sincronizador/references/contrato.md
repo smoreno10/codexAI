@@ -2,15 +2,14 @@
 
 ## 1. Alcance y responsabilidad
 
-Esta skill sincroniza AGENTS.md y las skills propias únicamente dentro del repositorio smoreno10/codexAI. Los catálogos de casa y oficina, sus repositorios y los backlogs por proyecto están excluidos de este flujo. El README de backlog/ se mantiene sólo como documentación. El SKILL.md conduce la conversación y las autorizaciones humanas; sync-codex.ps1 verifica el estado técnico y ejecuta operaciones Git acotadas sólo sobre la raíz de codexAI.
+Esta skill sincroniza AGENTS.md y las skills propias únicamente dentro del repositorio smoreno10/codexAI. Los catálogos de casa y oficina, sus repositorios y los backlogs por proyecto están excluidos de este flujo. codexAI no conserva documentación ni datos bajo backlog/. El SKILL.md conduce la conversación y las autorizaciones humanas; sync-codex.ps1 verifica el estado técnico y ejecuta operaciones Git acotadas sólo sobre la raíz de codexAI.
 
 Rutas permitidas:
 - .gitignore
 - AGENTS.md
-- backlog/README.md, sólo documentación
 - skills/**, excepto skills/.system/**
 
-El script debe rechazar cualquier archivo rastreado fuera de esta lista antes de preparar, confirmar o publicar cambios. La única excepción transitoria es backlog/backlog.yaml cuando falta en el árbol de trabajo: se permite únicamente preparar su eliminación, nunca agregar o modificar contenido bajo backlog/.
+El script debe rechazar cualquier archivo rastreado fuera de esta lista antes de preparar, confirmar o publicar cambios. La única excepción transitoria es backlog/README.md cuando falta en el árbol de trabajo: se permite únicamente preparar su eliminación, nunca agregar o modificar contenido bajo backlog/.
 ## 2. Protocolo operativo
 
 1. Ejecutar `Diagnostico` antes de cualquier acción mutante y presentar su resultado.
@@ -36,9 +35,7 @@ No debe usar `stash`, `reset`, `rebase`, merge automático, resolución automát
 
 Los catálogos codexAIBackLogCasa y codexAIBackLogOficina se administran en sus propios repositorios. Ni esta skill ni sync-codex.ps1 deben consultarlos, actualizarlos, confirmarlos o publicarlos. Los backlogs de proyecto se gestionan mediante skl-backlog y no se incorporan al repositorio codexAI.
 
-backlog/README.md es documentación de la arquitectura y permanece permitido. El archivo global legado backlog/backlog.yaml ya fue migrado y debe retirarse. Para facilitar esa única eliminación, el diagnóstico puede aceptar la ruta exacta sólo cuando el archivo no exista en el árbol de trabajo. La acción Commit puede preparar únicamente la eliminación de esa ruta exacta. No se permite agregar ni modificar otros archivos bajo backlog/.
-
-La excepción queda inactiva una vez confirmado el retiro: no habrá datos de catálogos ni backlogs en la lista permitida ni en los destinos de git add.
+La única excepción transitoria permite retirar backlog/README.md, ya rastreado, cuando no existe en el árbol de trabajo. La acción Commit puede preparar sólo esa eliminación exacta. No se permite agregar ni modificar contenido bajo backlog/.
 ## 6. Resultado y transición
 
 Un rechazo o error de Git se considera un resultado seguro: se conserva el árbol de trabajo y cualquier commit local existente. La resolución de conflictos, cambios locales o ajustes de política queda bajo control de la persona usuaria y requiere una nueva acción explícita.
@@ -52,3 +49,5 @@ Un rechazo o error de Git se considera un resultado seguro: se conserva el árbo
 - v1.3 — 07/10/2026: documenta la compatibilidad transitoria y las condiciones para retirar el backlog anterior de codexAI.
 
 - v1.4 — 08/10/2026: excluye repositorios de catálogos y backlogs de proyecto; permite sólo la eliminación del backlog legado.
+
+- v1.5 — 08/10/2026: elimina la documentación bajo backlog/ y permite sólo retirar su archivo rastreado.

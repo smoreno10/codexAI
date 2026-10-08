@@ -5,7 +5,7 @@ description: Sincroniza AGENTS.md y las skills propias mediante codexAI; excluye
 
 # Sincronizador de Codex
 
-Esta skill coordina únicamente la sincronización segura de las instrucciones compartidas y las skills propias dentro del repositorio smoreno10/codexAI. Los catálogos de casa y oficina viven en repositorios separados y quedan fuera de este flujo. También quedan fuera los backlogs por proyecto. El README de backlog/ se conserva como documentación de arquitectura, no como fuente de datos. El archivo legado backlog/backlog.yaml sólo puede retirarse como eliminación puntual; no se sincroniza ni se vuelve a agregar.
+Esta skill coordina únicamente la sincronización segura de las instrucciones compartidas y las skills propias dentro del repositorio smoreno10/codexAI. Los catálogos de casa y oficina viven en repositorios separados y quedan fuera de este flujo. También quedan fuera los backlogs por proyecto. codexAI no conserva documentación ni datos bajo backlog/. La ruta backlog/README.md sólo se admite temporalmente para retirar el archivo ya rastreado; no se permite volver a agregarla ni sincronizar contenido bajo backlog/.
 
 Usa sync-codex.ps1 para las comprobaciones y operaciones Git acotadas. El script opera exclusivamente sobre la raíz de codexAI.
 
@@ -31,3 +31,5 @@ Para el procedimiento operativo, los límites y los estados de detención, aplic
 - v1.4 — 07/10/2026: distingue instrucciones compartidas y datos por proyecto, manteniendo compatibilidad temporal con el backlog anterior.
 
 - v1.5 — 08/10/2026: excluye catálogos y backlogs de casa y oficina; limita el backlog legado a su eliminación puntual.
+
+- v1.6 — 08/10/2026: elimina la documentación bajo backlog/ y limita su ruta a la eliminación puntual del archivo rastreado.
