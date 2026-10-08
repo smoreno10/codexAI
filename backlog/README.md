@@ -1,13 +1,15 @@
-# Backlog anterior: transición
+# Backlogs por proyecto y catálogos por ambiente
 
-`backlog.yaml` conserva los registros globales anteriores como fuente de migración. Todavía está versionado y compartido en `codexAI`; no se han separado físicamente los datos de casa y oficina.
+## Estado de la migración
 
-La organización acordada usa un `backlog.yaml` por proyecto y un catálogo por ambiente en un repositorio de GitHub independiente. El consolidado se genera leyendo los backlogs, sin duplicar cambios en el catálogo.
+La migración del backlog global a los backlogs por proyecto y a los catálogos independientes de casa y oficina fue verificada. El archivo global backlog/backlog.yaml se retira de codexAI; su historial previo permanece recuperable en Git.
 
-Usar `$skl-backlog` para resolver el proyecto y consultar los registros correspondientes. Para proyectos no migrados, consultar sus registros del archivo anterior indicando que son transitorios. No sustituir automáticamente un backlog de proyecto por el global ni modificar estados por inferencia.
+## Límites de repositorio
 
-Antes de migrar, aplicar [los formatos y la transición](../skills/skl-backlog/references/organizacion.md). Conservar identificadores, fechas, estados, dependencias y observaciones. La creación de catálogos, migración y retirada del versionado requieren sus autorizaciones. Este archivo y los datos se conservan hasta verificar la migración completa.
+Cada proyecto mantiene su propio backlog.yaml en la raíz de su proyecto. Cada ambiente mantiene catalogo.yaml en un repositorio independiente: codexAIBackLogCasa o codexAIBackLogOficina.
+
+El repositorio codexAI sincroniza AGENTS.md y las skills propias. No sincroniza ni opera sobre los repositorios de catálogos ni sobre los backlogs por proyecto. La skill skl-backlog localiza los proyectos en el catálogo correspondiente y consulta sus archivos backlog.yaml.
 
 ## Historial de versiones
 
-- v1.0 — 07/10/2026: documenta el carácter transitorio del backlog anterior y la organización por proyecto y ambiente.
+- v1.1 — 08/10/2026: registra el fin de la migración y separa explícitamente documentación, catálogos y backlogs por proyecto.

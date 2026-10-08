@@ -2,19 +2,15 @@
 
 ## 1. Alcance y responsabilidad
 
-Esta skill sincroniza `.gitignore`, `AGENTS.md` y las skills propias a través del repositorio `smoreno10/codexAI`. Temporalmente también sincroniza el backlog anterior mientras se completa su migración. Los nuevos catálogos por ambiente y backlogs por proyecto quedan fuera de su alcance y tienen su propio versionado. El `SKILL.md` conduce la conversación y las autorizaciones humanas; `sync-codex.ps1` verifica el estado técnico y ejecuta operaciones Git acotadas.
+Esta skill sincroniza AGENTS.md y las skills propias únicamente dentro del repositorio smoreno10/codexAI. Los catálogos de casa y oficina, sus repositorios y los backlogs por proyecto están excluidos de este flujo. El README de backlog/ se mantiene sólo como documentación. El SKILL.md conduce la conversación y las autorizaciones humanas; sync-codex.ps1 verifica el estado técnico y ejecuta operaciones Git acotadas sólo sobre la raíz de codexAI.
 
-La lista permitida durante la transición es:
+Rutas permitidas:
+- .gitignore
+- AGENTS.md
+- backlog/README.md, sólo documentación
+- skills/**, excepto skills/.system/**
 
-```text
-.gitignore
-AGENTS.md
-backlog/**
-skills/**, excepto skills/.system/**
-```
-
-El script debe rechazar cualquier archivo rastreado fuera de esa lista antes de preparar, confirmar o publicar cambios.
-
+El script debe rechazar cualquier archivo rastreado fuera de esta lista antes de preparar, confirmar o publicar cambios. La única excepción transitoria es backlog/backlog.yaml cuando falta en el árbol de trabajo: se permite únicamente preparar su eliminación, nunca agregar o modificar contenido bajo backlog/.
 ## 2. Protocolo operativo
 
 1. Ejecutar `Diagnostico` antes de cualquier acción mutante y presentar su resultado.
@@ -36,14 +32,13 @@ Ante rutas rastreadas no permitidas, cambios locales incompatibles, índice prev
 
 No debe usar `stash`, `reset`, `rebase`, merge automático, resolución automática de conflictos, `push --force` ni modificar automáticamente `.gitignore` para corregir un estado. Tampoco debe crear commits vacíos ni incorporar archivos fuera de la lista permitida.
 
-## 5. Migración del backlog anterior
+## 5. Exclusiones y retiro del backlog legado
 
-Conservar temporalmente `backlog/**` en la política, el script y `.gitignore` evita rechazar los archivos que aún están rastreados. Su presencia significa que esos datos todavía se comparten entre instalaciones; no afirmar que ya existe separación completa.
+Los catálogos codexAIBackLogCasa y codexAIBackLogOficina se administran en sus propios repositorios. Ni esta skill ni sync-codex.ps1 deben consultarlos, actualizarlos, confirmarlos o publicarlos. Los backlogs de proyecto se gestionan mediante skl-backlog y no se incorporan al repositorio codexAI.
 
-Las consultas nuevas corresponden a `skl-backlog`. Antes de publicar, revisar también cualquier diferencia del backlog anterior: el script aún puede incluirla en el commit. No incluir modificaciones ajenas al alcance autorizado ni resolverlas automáticamente.
+backlog/README.md es documentación de la arquitectura y permanece permitido. El archivo global legado backlog/backlog.yaml ya fue migrado y debe retirarse. Para facilitar esa única eliminación, el diagnóstico puede aceptar la ruta exacta sólo cuando el archivo no exista en el árbol de trabajo. La acción Commit puede preparar únicamente la eliminación de esa ruta exacta. No se permite agregar ni modificar otros archivos bajo backlog/.
 
-Una etapa posterior, expresamente autorizada, debe migrar y verificar todos los registros de casa y oficina, preservar una copia recuperable, retirar `backlog/**` del versionado de `codexAI` sin perder los datos necesarios y ajustar conjuntamente el script, `.gitignore` y este contrato. No retirar ahora la compatibilidad ni ejecutar esa migración como parte de una sincronización rutinaria.
-
+La excepción queda inactiva una vez confirmado el retiro: no habrá datos de catálogos ni backlogs en la lista permitida ni en los destinos de git add.
 ## 6. Resultado y transición
 
 Un rechazo o error de Git se considera un resultado seguro: se conserva el árbol de trabajo y cualquier commit local existente. La resolución de conflictos, cambios locales o ajustes de política queda bajo control de la persona usuaria y requiere una nueva acción explícita.
@@ -55,3 +50,5 @@ Un rechazo o error de Git se considera un resultado seguro: se conserva el árbo
 - v1.0 — 05/10/2026: define el protocolo, controles y límites de la sincronización segura.
 
 - v1.3 — 07/10/2026: documenta la compatibilidad transitoria y las condiciones para retirar el backlog anterior de codexAI.
+
+- v1.4 — 08/10/2026: excluye repositorios de catálogos y backlogs de proyecto; permite sólo la eliminación del backlog legado.

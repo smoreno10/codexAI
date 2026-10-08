@@ -1,11 +1,13 @@
 ---
 name: skl-sincronizador
-description: Sincroniza AGENTS.md y las skills propias mediante codexAI; conserva temporalmente el backlog anterior durante su migración.
+description: Sincroniza AGENTS.md y las skills propias mediante codexAI; excluye los catálogos y backlogs de casa y oficina.
 ---
 
 # Sincronizador de Codex
 
-Esta skill coordina la sincronización segura del repositorio de configuración de Codex. Los catálogos por ambiente y los backlogs por proyecto se versionan por separado. Durante la migración, `backlog/**` permanece temporalmente rastreado y compartido en `codexAI`; no se ha completado todavía la separación de los datos. Usa `sync-codex.ps1` para todas las comprobaciones y operaciones Git.
+Esta skill coordina únicamente la sincronización segura de las instrucciones compartidas y las skills propias dentro del repositorio smoreno10/codexAI. Los catálogos de casa y oficina viven en repositorios separados y quedan fuera de este flujo. También quedan fuera los backlogs por proyecto. El README de backlog/ se conserva como documentación de arquitectura, no como fuente de datos. El archivo legado backlog/backlog.yaml sólo puede retirarse como eliminación puntual; no se sincroniza ni se vuelve a agregar.
+
+Usa sync-codex.ps1 para las comprobaciones y operaciones Git acotadas. El script opera exclusivamente sobre la raíz de codexAI.
 
 ## Acciones disponibles
 
@@ -27,3 +29,5 @@ Para el procedimiento operativo, los límites y los estados de detención, aplic
 - v1.3 — 06/10/2026: renombra la skill de sincronizador-codex a skl-sincronizador para facilitar su identificación entre las skills propias.
 
 - v1.4 — 07/10/2026: distingue instrucciones compartidas y datos por proyecto, manteniendo compatibilidad temporal con el backlog anterior.
+
+- v1.5 — 08/10/2026: excluye catálogos y backlogs de casa y oficina; limita el backlog legado a su eliminación puntual.
