@@ -43,6 +43,8 @@ Debe limitarse al alcance autorizado.
 
 Al iniciar la ejecución, debe informar el bloque inmediato que comenzará, sin presentarlo como completado. Cada actualización posterior debe identificar el bloque concreto completado, la evidencia disponible y el siguiente bloque; no debe limitarse a estados genéricos como "sigo trabajando".
 
+Ante un fallo técnico de una herramienta o método de edición que no haya aplicado cambios ni altere el alcance, debe verificar el estado y continuar en el mismo turno con una alternativa segura contemplada por el plan. Una actualización de estado no suspende la ejecución; sólo debe detenerse para pedir intervención ante una autorización pendiente, una desviación material, un bloqueo externo o un riesgo no contemplado.
+
 Si durante la ejecución aparece una desviación material del plan, debe detener ese punto, explicar la situación y acordar cómo continuar antes de realizar modificaciones no contempladas.
 
 Cuando el cambio involucre software, debe respetar además los controles específicos definidos en `AGENTS.md`.
@@ -83,3 +85,4 @@ Después de crear o modificar una página o control con archivos asociados, debe
 - v1.4 — 06/10/2026: deriva a la guía VB.NET/Web Forms cuando la tecnología del cambio lo requiere.
 - v1.5 — 06/10/2026: exige presentar el registro de versiones antes de solicitar el cierre.
 - v1.6 — 14/10/2026: exige actualizaciones de ejecución concretas y verificables, con estado y próximo bloque.
+- v1.7 — 14/10/2026: exige continuar con una alternativa segura tras fallos técnicos sin cambios ni desviación de alcance.
