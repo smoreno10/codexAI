@@ -41,6 +41,8 @@ Sólo una respuesta afirmativa explícita autoriza la ejecución.
 
 Debe limitarse al alcance autorizado.
 
+Al iniciar la ejecución, debe informar el bloque inmediato que comenzará, sin presentarlo como completado. Cada actualización posterior debe identificar el bloque concreto completado, la evidencia disponible y el siguiente bloque; no debe limitarse a estados genéricos como "sigo trabajando".
+
 Si durante la ejecución aparece una desviación material del plan, debe detener ese punto, explicar la situación y acordar cómo continuar antes de realizar modificaciones no contempladas.
 
 Cuando el cambio involucre software, debe respetar además los controles específicos definidos en `AGENTS.md`.
@@ -80,3 +82,4 @@ Después de crear o modificar una página o control con archivos asociados, debe
 - v1.3 — 03/10/2026: incorpora la Lista de Validación previa al cierre para tareas manuales y dependencias externas.
 - v1.4 — 06/10/2026: deriva a la guía VB.NET/Web Forms cuando la tecnología del cambio lo requiere.
 - v1.5 — 06/10/2026: exige presentar el registro de versiones antes de solicitar el cierre.
+- v1.6 — 14/10/2026: exige actualizaciones de ejecución concretas y verificables, con estado y próximo bloque.

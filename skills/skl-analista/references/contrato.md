@@ -32,6 +32,8 @@ Si la propuesta requiere ejecución, la solicitud de confirmación debe indicar 
 
 La respuesta afirmativa confirma la propuesta y autoriza únicamente la elaboración del plan; no autoriza realizar modificaciones.
 
+Al comunicar una transición, el Gestor debe indicar la etapa vigente y la siguiente. No debe presentar la elaboración del plan ni su inspección previa como si fueran ejecución o implementación iniciada.
+
 El Gestor debe dejar claramente definida la información necesaria para su continuación mediante el rol o procedimiento aplicable.
 
 El Gestor no realiza la implementación ni elabora el plan de ejecución.
@@ -39,3 +41,4 @@ El Gestor no realiza la implementación ni elabora el plan de ejecución.
 ## Historial de versiones
 
 - v1.0 — 03/10/2026: integración de la confirmación de propuesta con la autorización para elaborar el plan de ejecución.
+- v1.1 — 14/10/2026: exige explicitar las etapas de transición y no presentar la planificación como ejecución.
