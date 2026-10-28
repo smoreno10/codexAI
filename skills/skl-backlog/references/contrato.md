@@ -12,6 +12,16 @@ Puede consultar y filtrar cambios por proyecto, entorno, estado, prioridad o dep
 
 Siempre que el usuario solicite un listado de cambios del backlog, presentarlo como una tabla con las columnas `id`, `titulo`, `estado`, `fecha de alta`, `última modificación` y `observaciones`, en ese orden. La columna `fecha de alta` corresponde a `fecha_registro` y la columna `última modificación` corresponde a `fecha_ultima_actualizacion`. Mostrar las observaciones completas, sin resumirlas. Consultar el archivo vigente antes de responder.
 
+### Formato de listados
+
+- Consolidado: una sola tabla. Cada proyecto se introduce con una fila separadora con su nombre en negrita en la columna `id` y las demás celdas vacías. Los proyectos siguen el orden del catálogo.
+- Todo proyecto registrado aparece aunque no tenga cambios para el filtro aplicado, con una fila `—` y la leyenda «Sin cambios abiertos» o «Sin cambios registrados», según corresponda.
+- Antes de la tabla, un resumen breve que indique el filtro aplicado. Después de la tabla, las observaciones de alcance o calidad (resultado parcial, formatos inválidos, novedades).
+- Consulta de un solo proyecto: una tabla simple, sin filas separadoras.
+- Filtros: «todo» incluye todos los estados. «Excluir cerrado», «sin cerrar» o «pendientes» en sentido general incluyen todos los estados salvo `cerrado`. Ante un pedido ambiguo, aclarar en el resumen el filtro aplicado.
+
+Ante una consulta de trabajo por día o período, listar las entradas de `historial` comprendidas, agrupadas por día y proyecto, con las columnas `fecha`, `proyecto`, `id`, `titulo` y `descripcion`.
+
 Antes de escribir en un backlog o catálogo debe respetar el flujo general de `AGENTS.md` y obtener la autorización aplicable. Sólo modifica esos archivos dentro del alcance autorizado; no modifica código, ni crea repositorios, commits o check-ins automáticamente.
 
 ### Resolución de la consulta
@@ -20,7 +30,7 @@ Antes de escribir en un backlog o catálogo debe respetar el flujo general de `A
 - Un proyecto indicado expresamente prevalece sobre el contexto. Consultar su backlog registrado; sin catálogo puede consultarse el archivo de raíz si el proyecto se identifica inequívocamente.
 - Para «consolidado de este ambiente», leer el catálogo de la copia local identificada por el usuario o por una configuración local previamente acordada. Esa ubicación se configura por instalación, fuera de las instrucciones compartidas. El campo `ambiente` identifica casa u oficina; no deducirlo por usuario de Windows, nombre del equipo o proyectos vistos antes.
 - Si faltan la ubicación, el proyecto o el ambiente, preguntar antes de resolver el alcance. Una petición del otro ambiente requiere acceso explícito a su catálogo; no buscar ni mezclar datos del otro ambiente automáticamente.
-- Leer todos los backlogs registrados para el consolidado y agrupar las tablas por proyecto, conservando las columnas acordadas. Los identificadores de cambio se interpretan junto con el proyecto.
+- Leer todos los backlogs registrados para el consolidado y presentarlos según el formato de listados, en una sola tabla con separadores por proyecto. Los identificadores de cambio se interpretan junto con el proyecto.
 - Informar qué archivos se consultaron. Si hay archivos inexistentes, inaccesibles o inválidos, indicar los proyectos afectados y marcar el resultado como parcial. Nunca interpretar un archivo inaccesible como backlog vacío ni crear un archivo para resolver una consulta.
 - Un backlog inexistente en un proyecto sin migrar no habilita una alta automática. Identificar el proyecto y ofrecer consultar únicamente sus registros del global anterior, explicando su carácter transitorio. No mezclar registros viejos y nuevos como si fueran dos fuentes vigentes.
 
@@ -32,9 +42,11 @@ No debe inferir ni registrar automáticamente un estado. Para `cerrado` debe con
 
 ## 4. Fechas de trazabilidad
 
-Cada cambio debe registrar `fecha_creacion`, `fecha_registro` y `fecha_ultima_actualizacion` en formato `YYYY-MM-DD`.
+Cada cambio debe registrar `fecha_creacion`, `fecha_registro` y `fecha_ultima_actualizacion` en formato `YYYY-MM-DD HH:MM`, en hora local. Los registros anteriores que sólo tienen fecha (`YYYY-MM-DD`) siguen siendo válidos; no se reconstruye su hora.
 
 Al crear un nuevo registro se completan las tres fechas. En una modificación posterior sólo se actualiza `fecha_ultima_actualizacion`.
+
+Cada cambio lleva una lista `historial`. Al crear el registro se agrega una entrada inicial; en cada modificación posterior se actualiza `fecha_ultima_actualizacion` y se agrega una entrada con `fecha` (mismo formato) y `descripcion` breve de lo modificado. Las entradas existentes no se editan ni se eliminan.
 
 ## 5. Límites
 
@@ -50,3 +62,7 @@ No inicia tareas de implementación, no modifica archivos del proyecto ajenos al
 - v1.3 — 06/10/2026: agrega fecha de alta y última modificación a los listados, correspondientes a fecha_registro y fecha_ultima_actualizacion.
 
 - v1.4 — 07/10/2026: define alcance por proyecto y ambiente, consultas parciales, catálogo y transición sin duplicar fuentes de verdad.
+
+- v1.5 — 23/10/2026: fechas con hora e historial de modificaciones por cambio; consulta de trabajo por día.
+
+- v1.6 — 28/10/2026: reemplaza el contrato por la versión aportada por el usuario; unifica el consolidado en una sola tabla con separadores por proyecto, incluye proyectos sin cambios, explicita los filtros y adapta las referencias generales a AGENTS.md.

@@ -34,13 +34,16 @@ cambios:
     referencia_original: '#001'
     titulo: Cambio de ejemplo
     estado: pendiente
-    fecha_creacion: '2026-10-07'
-    fecha_registro: '2026-10-07'
-    fecha_ultima_actualizacion: '2026-10-07'
+    fecha_creacion: '2026-10-07 09:00'
+    fecha_registro: '2026-10-07 09:00'
+    fecha_ultima_actualizacion: '2026-10-07 09:00'
     observaciones: ''
+    historial:
+      - fecha: '2026-10-07 09:00'
+        descripcion: Alta del cambio.
 ```
 
-`version`, `proyecto` y `cambios` son obligatorios. El identificador del proyecto debe coincidir con el catálogo cuando esté registrado. Cada cambio requiere `id`, `titulo`, `estado`, las tres fechas y `observaciones`; los identificadores deben ser únicos dentro del proyecto. Un backlog vacío usa `cambios: []`. Conservar `referencia_original`, `depende_de`, prioridades, vínculos y otros datos existentes cuando correspondan; no agregar valores inventados. Validar estados y fechas conforme al contrato. Las dependencias conservan sus identificadores; si cruzan proyectos, mantener la referencia y aclarar su alcance antes de reinterpretarla.
+`version`, `proyecto` y `cambios` son obligatorios. El identificador del proyecto debe coincidir con el catálogo cuando esté registrado. Cada cambio requiere `id`, `titulo`, `estado`, las tres fechas, `observaciones` e `historial`; los identificadores deben ser únicos dentro del proyecto. Un backlog vacío usa `cambios: []`. Conservar `referencia_original`, `depende_de`, prioridades, vínculos y otros datos existentes cuando correspondan; no agregar valores inventados. Validar estados y fechas conforme al contrato. Las dependencias conservan sus identificadores; si cruzan proyectos, mantener la referencia y aclarar su alcance antes de reinterpretarla.
 
 ## Migración posterior
 
@@ -53,3 +56,4 @@ cambios:
 ## Historial de versiones
 
 - v1.0 — 07/10/2026: define formatos, ubicaciones, repositorios por ambiente y migración posterior sin duplicar los cambios.
+- v1.1 — 23/10/2026: ejemplo con fechas y hora, e historial de modificaciones.
